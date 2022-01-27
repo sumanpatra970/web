@@ -1,0 +1,28 @@
+body {
+    background-image: url('http://chat97.herokuapp.com/home/static/back2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+img{
+    border-radius: 12px;
+    width:100%;
+}
+.pox{
+    text-align:center;
+    color:white;
+}
+@media only screen and (max-width: 600px) {
+    img{
+        border-radius: 10px;
+        height:200px;
+    }
+    .cc{
+        float: right;
+    }   
+}
+@media (min-width: 768px) {
+    .btn btn-dark{
+        margin-right:20px;
+    }
+}

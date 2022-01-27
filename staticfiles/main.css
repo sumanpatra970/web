@@ -1,0 +1,33 @@
+body {
+    background-image:url('http://chat97.herokuapp.com/home/static/back2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+#making{
+    height:50px;
+    width:200px;
+    font-size: large;
+    font-family: Georgia, serif;
+}
+#looking{
+    height:50px;
+    width:550px;
+    margin-left:60px;
+    font-size: large;
+    font-family: Georgia, serif;
+}
+@media only screen and (max-width: 600px) {
+    #making {
+      height:40px;
+      width:200px;
+      font-size: 18px;
+      margin-top:10px;
+    }
+    #looking{
+        height:40px;
+        width:200px;
+        font-size:18px;
+        margin-left:10px;
+    }
+}
