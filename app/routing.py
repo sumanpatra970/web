@@ -1,9 +1,9 @@
 # chat/routing.py
 from django.urls import re_path
 
-import consumer
+from .consumer import MySync, MyAsync
 
 websocket_urlpatterns = [
-    path('wa/sc/<str:grpname>',consumer.MySync.as_asgi()),
-    path('wa/ac/<str:grpname>',consumer.MyAsync.as_asgi())
+    path('wa/sc/<str:grpname>',MySync.as_asgi()),
+    path('wa/ac/<str:grpname>',MyAsync.as_asgi())
 ]
