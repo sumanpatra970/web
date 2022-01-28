@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+
 # Create your models here.
 import django
 django.setup()
@@ -20,9 +20,7 @@ class group(models.Model):
     class Meta:
         app_label = 'app'
 
-
     def __str__(self):
         return self.name
 
 
-User(app_label = 'app')

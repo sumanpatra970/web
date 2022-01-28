@@ -28,12 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['chat97.herokuapp.com']
 
-
+import django
+django.setup
 # Application definition
 
 INSTALLED_APPS = [
-    'app',
+    'apps',
     'channels',
+    'app.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

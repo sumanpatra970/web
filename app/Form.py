@@ -7,12 +7,12 @@ class account_creation_form(UserCreationForm):
     password2=None
     class Meta:
         model = User
+        app_label = 'app'
         fields =['username','email']
         widgets={'username':forms.TextInput(attrs={'class':'form-control pox','id': 'my_field'}),
                 'email': forms.EmailInput(attrs={'class':'form-control pox','id': 'my_field'})}
 
 class login_form(AuthenticationForm):
-
     username=forms.CharField(label="username",widget=forms.TextInput(attrs={'class':'form-control'}))
     password=forms.CharField(label="password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
@@ -20,6 +20,7 @@ class user_change_form(UserChangeForm):
     password=None
     class Meta:
         model=User
+        app_label = 'app'
         fields=['username','email','first_name','last_name',]
         widgets={'username':forms.TextInput(attrs={'class':'form-control'}),
                 'first_name':forms.TextInput(attrs={'class':'form-control'}),
@@ -33,7 +34,7 @@ class password_form(PasswordChangeForm):
     new_password2=forms.CharField(label="Confirm Newpassword",widget=forms.PasswordInput(attrs={'class':'form-control'}))
     class Meta:
         model=User
+        app_label = 'app'
 
 class name_form(forms.Form):
-
     name=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
