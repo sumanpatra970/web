@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'home.css'%}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head class="pok">
+<body>
+<br>
+<div class="row">
+    {% if user.is_authenticated %}
+    <div class="col-9"></div>
+    <div class="col-2"><a href="http://127.0.0.1:8000/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+    {% else %}
+    <div class="col-8"></div>
+    <div class="col-2 pox"><a href="http://127.0.0.1:8000/login"><button class="btn btn-dark cc" id="buttonchange">Login</button></a></div>
+    <div class="col-2 pox"><a href="http://127.0.0.1:8000/signup"><button class="btn btn-dark cc" id="buttonchange">Signup</button></a></div>
+    {% endif %}
+</div>
+<br><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 pox">
+            <div class="col-md-12"><img src="{% static 'pic1.jpg'%}" id="make"></div>
+            <div class="col-md-12 pox"><a href="k/indian/"><button class="btn btn-dark">North Indian chatroom</button></a></div>
+        </div>
+        <div class="col-sm-3 pox">
+            <div class="col-md-12"><img src="{% static 'pic5.jpg'%}" ></div>
+            <div class="col-md-12 pox"><a href="k/kolkata/"><button class="btn btn-dark">NorthEast chatroom</button></a></div>
+        </div>
+        <div class="col-sm-3 pox">
+            <div class="col-md-12"><img src="{% static 'pic6.jpg'%}"></div>
+            <div class="col-md-12 pox"><a href="k/bangalore/"><button class="btn btn-dark">South Indian chatroom</button></a></div>
+        </div>
+        <div class="col-sm-3 pox">
+            <div class="col-md-12"><img src="{% static 'dating8.jpg'%}"></div>
+            <div class="col-md-12 pox"><a href="k/hyderbad/"><button class="btn btn-dark">Common chatroom</button></a></div>
+        </div>
+    </div>
+    <br><br>
+    <div class="row pox">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-9">
+            <form action="/customroom" method="POST">
+                {% csrf_token %}
+            <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
+            <input type="submit" class="btn btn-dark" id="ok" value="create room">
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<script>
+    document.getElementById("ok").onclick = function () {
+        const messageinputdom=document.getElementById('po')
+        const msg=messageinputdom.value
+        console.log(msg)
+        const mmessageinputdom=document.getElementById('poo')
+        const mmsg=messageinputdom.value
+        console.log(mmsg)
+        location.href = "http://127.0.0.1:8000/k/"+msg;
+    };
+</script>
+</body>
+</html>

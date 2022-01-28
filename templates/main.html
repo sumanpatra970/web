@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<br><br><br><br><br>
+<br><br><br><br>
+<div class="row">
+    {% if user.is_authenticated %}
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 pox"><a href="home"><button class="btn btn-warning" id="making">ENTER ROOM</button></a></div>
+    <div class="col-3"></div>
+    {% else %}
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3 pox"><a href="signup"><button class="btn btn-warning" id="making">Signup</button></a></div>
+    <div class="col-sm-3 pox" ><a href="login"><button class="btn btn-warning" id="making">Login</button></a></div>
+    <div class="col-3"></div>
+    {%endif%}
+</div>
+<br>
+<p class="pox">{{k}}</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6" ><a href="home"><button class="btn btn-dark" id="looking">Enter as Guest user</button></a></div>
+</div>
+<div>
+</div>
+</body>
+</html>

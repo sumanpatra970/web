@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url('home/static/back2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+          }
+    </style>
+    <title>EDITPROFILE</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container-fluid lll">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h3>Edit profile</h3>
+                <form  method="POST" class="form-group" action="">
+                    {%csrf_token%}
+                    {% for t in data%}
+                    <h5 class="kk">{{t.label_tag}} {{t}}</h5>
+                    {% endfor %}
+                    <button class="btn btn-success" type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
