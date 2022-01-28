@@ -51,7 +51,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'web.wsgi.application'
 
-ASGI_APPLICATION = "routing.application"
+ASGI_APPLICATION = "web.routing.application"
 
 DATABASES = {
     'default': {
