@@ -139,3 +139,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'sumanpatra260@gmail.com'
 
 EMAIL_HOST_PASSWORD = 'jukyfzmfmkpcxbhb'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL','redis://localhost:6379')],
+        },
+    },
+}
