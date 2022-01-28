@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-d^z8ot%#l=7879ze8%^ytmkbvw8&_kdkj!!w@g!x#6k1+v09_(
 DEBUG = True
 
 ALLOWED_HOSTS = ['chat97.herokuapp.com']
-
+import django
+django.setup()
 
 # Application definition
 
