@@ -12,6 +12,7 @@ class account_creation_form(UserCreationForm):
                 'email': forms.EmailInput(attrs={'class':'form-control pox','id': 'my_field'})}
 
 class login_form(AuthenticationForm):
+
     username=forms.CharField(label="username",widget=forms.TextInput(attrs={'class':'form-control'}))
     password=forms.CharField(label="password",widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
@@ -34,4 +35,5 @@ class password_form(PasswordChangeForm):
         model=User
 
 class name_form(forms.Form):
+
     name=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
