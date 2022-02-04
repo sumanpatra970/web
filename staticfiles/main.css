@@ -4,6 +4,9 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+.pox{
+    text-align:center;
+}
 #making{
     height:50px;
     width:200px;
