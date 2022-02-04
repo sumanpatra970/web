@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-d^z8ot%#l=7879ze8%^ytmkbvw8&_kdkj!!w@g!x#6k1+v09_(
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['chat97.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['chat97.herokuapp.com','127.0.0.1','www.consultandcounsel.com']
 
 INSTALLED_APPS = [
     'app',
