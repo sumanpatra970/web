@@ -115,3 +115,7 @@ CHANNEL_LAYERS = {
 }
 
 CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com"]
+
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
