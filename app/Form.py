@@ -8,8 +8,8 @@ class account_creation_form(UserCreationForm):
     class Meta:
         model = User
         fields =['username','email']
-        widgets={'username':forms.TextInput(attrs={'class':'form-control pox','id': 'my_field'}),
-                'email': forms.EmailInput(attrs={'class':'form-control pox','id': 'my_field'})}
+        widgets={'username':forms.TextInput(attrs={'class':'form-control','id': 'my_field'}),
+                'email': forms.EmailInput(attrs={'class':'form-control','id': 'my_field'})}
 
 class login_form(AuthenticationForm):
     username=forms.CharField(label="username",widget=forms.TextInput(attrs={'class':'form-control'}))
