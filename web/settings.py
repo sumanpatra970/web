@@ -114,4 +114,4 @@ CHANNEL_LAYERS = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com/"]
+CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com/signup"]
