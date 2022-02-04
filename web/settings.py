@@ -114,7 +114,7 @@ CHANNEL_LAYERS = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com","http://www.groupchat.ind.in"]
+CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com","https://www.groupchat.ind.in"]
 
 AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),
