@@ -13,6 +13,7 @@ ALLOWED_HOSTS = ['chat97.herokuapp.com','127.0.0.1']
 INSTALLED_APPS = [
     'app',
     'channels',
+    'corsheaders', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -112,3 +113,5 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com/"]
