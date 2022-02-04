@@ -14,12 +14,12 @@
         {% if user.is_authenticated %}
         <div class="col-3"></div>
         <div class="col-6"></div>
-        <div class="col-2"><a href="http://127.0.0.1:8000/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        <div class="col-2"><a href="https://chat97.herokuapp.com/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
         {% else %}
         <div class="col-3"></div>
         <div class="col-5"></div>
-        <div class="col-2"><a href="http://127.0.0.1:8000/signup"><button class="btn btn-dark cc">Signup</button></a></div>
-        <div class="col-2"><a href="http://127.0.0.1:8000/login"><button class="btn btn-dark cc">Login</button></a></div>
+        <div class="col-2"><a href="https://chat97.herokuapp.com/signup"><button class="btn btn-dark cc">Signup</button></a></div>
+        <div class="col-2"><a href="https://chat97.herokuapp.com/login"><button class="btn btn-dark cc">Login</button></a></div>
         {% endif %}
     </div>
     <main class="content">
@@ -30,7 +30,7 @@
                 <div class="row g-0">
                     <div class="col-12 col-sm-12 col-xl-12">
                         <div class="position-relative">
-                                <textarea class="pol" id="chat-log" rows="10" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}{{i.timestamp}}->{{i.person}} : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
+                                <textarea class="pol" id="chat-log" rows="10" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}{{i.person}} : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="chat-message-input" placeholder="Type your message">
                                     <button class="btn btn-primary" id="chat-message-submit"> Send</button>
