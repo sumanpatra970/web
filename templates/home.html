@@ -13,11 +13,11 @@
 <div class="row">
     {% if user.is_authenticated %}
     <div class="col-9"></div>
-    <div class="col-2"><a href="https://chat97.herokuapp.com/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+    <div class="col-2"><a href="account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
     {% else %}
     <div class="col-8"></div>
-    <div class="col-2 pox"><a href="https://chat97.herokuapp.com/login"><button class="btn btn-dark cc" id="buttonchange">Login</button></a></div>
-    <div class="col-2 pox"><a href="https://chat97.herokuapp.com/signup"><button class="btn btn-dark cc" id="buttonchange">Signup</button></a></div>
+    <div class="col-2 pox"><a href="login"><button class="btn btn-dark cc" id="buttonchange">Login</button></a></div>
+    <div class="col-2 pox"><a href="signup"><button class="btn btn-dark cc" id="buttonchange">Signup</button></a></div>
     {% endif %}
 </div>
 <br><br>
@@ -44,7 +44,7 @@
     <div class="row pox">
         <div class="col-sm-1"></div>
         <div class="col-sm-9">
-            <form action="/customroom" method="POST">
+            <form action="customroom" method="POST">
                 {% csrf_token %}
             <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
             <input type="submit" class="btn btn-dark" id="ok" value="create room">
@@ -61,7 +61,7 @@
         const mmessageinputdom=document.getElementById('poo')
         const mmsg=messageinputdom.value
         console.log(mmsg)
-        location.href = "http://127.0.0.1:8000/k/"+msg;
+        location.href = "k/"+msg;
     };
 </script>
 </body>

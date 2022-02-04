@@ -14,12 +14,12 @@
         {% if user.is_authenticated %}
         <div class="col-3"></div>
         <div class="col-6"></div>
-        <div class="col-2"><a href="https://chat97.herokuapp.com/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        <div class="col-2"><a href="account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
         {% else %}
         <div class="col-3"></div>
         <div class="col-5"></div>
-        <div class="col-2"><a href="https://chat97.herokuapp.com/signup"><button class="btn btn-dark cc">Signup</button></a></div>
-        <div class="col-2"><a href="https://chat97.herokuapp.com/login"><button class="btn btn-dark cc">Login</button></a></div>
+        <div class="col-2"><a href="signup"><button class="btn btn-dark cc">Signup</button></a></div>
+        <div class="col-2"><a href="login"><button class="btn btn-dark cc">Login</button></a></div>
         {% endif %}
     </div>
     <main class="content">
@@ -46,7 +46,7 @@
     <script>
         const grpname=JSON.parse(document.getElementById('group_name').textContent)
         const username=JSON.parse(document.getElementById('name').textContent)
-        var ws= new WebSocket('wss://chat97.herokuapp.com/wa/sc/'+grpname)
+        var ws= new WebSocket('wss://groupchat.ind.in/wa/sc/'+grpname)
         console.log(grpname)
         ws.onopen = function(){
             console.log('WebSocket connection open....')
