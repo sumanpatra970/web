@@ -5,7 +5,7 @@ from django.urls import path,re_path
 from app import views
 
 from django.contrib.auth import views as auth_views
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.main),
@@ -24,3 +24,6 @@ urlpatterns = [
     path('chat/',views.chat),
     path('home/k/<str:group_name>/',views.index),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
