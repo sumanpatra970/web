@@ -1,7 +1,7 @@
 from django.http.request import host_validation_re
 from django.shortcuts import render,redirect
 from .models import chat,group
-from .Form import account_creation_form,login_form,password_form,user_change_form,name_form
+from .Form import account_creation_form,login_form,password_form,user_change_form,name_form,feedbackform
 import http.client
 from django.contrib import auth
 from django.http import HttpResponseRedirect,HttpResponse
@@ -175,4 +175,27 @@ def support(request):
     return render(request,'support.html')
     
 def feedback(request):
-    return render(request,'feedback.html')
+    if request.method=="POST":
+        fm=feedbackform(request.POST,request.FILES)
+        if fm.is_valid():
+            x=fm.cleaned_data['Email']
+            fm.save()
+            send_mail(
+            'counsultandcounsel',
+            'Thank you for your feedback.We will check and reach out soon.Have a bright future ahead.',
+            settings.EMAIL_HOST_USER,
+            [x],
+            fail_silently=False)
+            send_mail(
+            'counsultandcounsel',
+            'Admin,you received a new feedback.Please check',
+            settings.EMAIL_HOST_USER,
+            ['sumanpatra68@gmail.com',],
+            fail_silently=False)
+            return render(request,'thank.html')
+        else:
+            fm=feedbackform()
+            return render(request,'feedback.html',{'fm':fm})
+    else:
+            fm=feedbackform()
+            return render(request,'feedback.html',{'fm':fm})
