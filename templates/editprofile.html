@@ -4,20 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'account.css'%}">
+    <link rel="stylesheet" href="{% static 'base.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            background-image: url('home/static/back2.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-          }
-    </style>
     <title>EDITPROFILE</title>
 </head>
 <body>
     <br>
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-6">
+            <img src="{% static 'logo.jpg'%}" class="logocheck">
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        {% else %}
+        <div class="col-4">
+            <img src="{% static 'logo.jpg'%}" class="logocheck">
+        </div>
+        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck" id="buttonchange">Login</button></a></div>
+        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        {% endif %}
+    </div>
     <br>
     <div class="container-fluid lll">
         <div class="row">
