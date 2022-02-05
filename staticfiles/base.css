@@ -78,6 +78,9 @@ body{
 .kk{
     text-align: center;
 }
+.ol{
+    font-size: 25px;
+}
 @media only screen and (max-width: 600px) {
     img{
       border-radius: 10px;
@@ -103,4 +106,7 @@ body{
         width: 100px;
         height: 40px;
     } 
+    .ol{
+        font-size:medium;
+    }
 }

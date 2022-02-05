@@ -16,8 +16,14 @@ body {
 .po{
     margin-left: 100px;
 }
+.ol{
+    font-size: 25px;
+}
 @media only screen and (max-width: 600px) {
     .xox{
         text-align: center;
+    }
+    .ol{
+        font-size: medium;
     }
 }
