@@ -12,6 +12,12 @@ img{
     text-align:center;
     color:white;
 }
+.logocheck{
+    text-align: center;
+    margin-left: 40px;
+    width: 100px;
+    height: 50px;
+}
 @media only screen and (max-width: 600px) {
     img{
         border-radius: 10px;

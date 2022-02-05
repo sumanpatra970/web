@@ -12,12 +12,18 @@
 <br>
 <div class="row">
     {% if user.is_authenticated %}
-    <div class="col-9"></div>
-    <div class="col-2"><a href="http://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+    <div class="col-6">
+        <img src="{% static 'logo.jpg'%}" id="make">
+    </div>
+    <div class="col-2"></div>
+    <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
     {% else %}
-    <div class="col-8"></div>
-    <div class="col-2 pox"><a href="http://www.groupchat.ind.in/login"><button class="btn btn-dark cc" id="buttonchange">Login</button></a></div>
-    <div class="col-2 pox"><a href="http://www.groupchat.ind.in/signup"><button class="btn btn-dark cc" id="buttonchange">Signup</button></a></div>
+    <div class="col-6">
+        <img src="{% static 'logo.jpg'%}" class="logocheck">
+    </div>
+    <div class="col-2"></div>
+    <div class="col-2 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark cc" id="buttonchange">Login</button></a></div>
+    <div class="col-2 pox"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark cc" id="buttonchange">Signup</button></a></div>
     {% endif %}
 </div>
 <br><br>
