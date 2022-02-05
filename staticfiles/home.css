@@ -24,6 +24,7 @@ img{
 }
 .ck{
     width:100px;
+    height: 50px;
 }
 @media only screen and (max-width: 600px) {
     img{
