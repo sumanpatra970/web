@@ -8,7 +8,7 @@ body {
     color:white;
 }
 .xox{
-    text-align: center;
+    text-align: none;
 }
 #my-field{
     color:white;
@@ -18,6 +18,6 @@ body {
 }
 @media only screen and (max-width: 600px) {
     .xox{
-        text-align: none;
+        text-align: center;
     }
 }
