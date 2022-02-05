@@ -16,3 +16,8 @@ body {
 .po{
     margin-left: 100px;
 }
+@media only screen and (max-width: 600px) {
+    .xox{
+        text-align: none;
+    }
+}
