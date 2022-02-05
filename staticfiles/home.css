@@ -38,10 +38,16 @@ img{
 .ol{
     font-size: 25px;
 }
+.lop{
+    margin-top: 100px;
+}
 @media only screen and (max-width: 600px) {
     img{
         border-radius: 10px;
         height:200px;
+    }
+    .lop{
+        margin-top: 0px;
     }
     .cc{
         margin-left: 10px;
