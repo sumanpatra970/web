@@ -23,7 +23,8 @@ img{
     width: 150px;
 }
 .ck{
-    width:100px;
+    margin-left: 100px;
+    width:150px;
     height: 50px;
 }
 @media only screen and (max-width: 600px) {
@@ -41,6 +42,10 @@ img{
         text-align: center;
         margin-left: 25px;
         width: 100px;
+        height: 40px;
+    }
+    .ck{
+        width:80px;
         height: 40px;
     }
 }
