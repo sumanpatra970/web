@@ -34,7 +34,7 @@ img{
     margin-right:5px;
 }
 .ol{
-    font-size: 30px;
+    font-size: 25px;
 }
 @media only screen and (max-width: 600px) {
     img{
@@ -62,7 +62,7 @@ img{
         margin-right:5px;
     }
     .ol{
-        font-size: medium;
+        font-size:20px;
     }
 }
 @media (min-width: 768px) {
