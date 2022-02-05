@@ -33,9 +33,9 @@ img{
     }   
     .logocheck{
         text-align: center;
-        margin-left: 20px;
+        margin-left: 25px;
         width: 100px;
-        height: 35px;
+        height: 40px;
     }
 }
 @media (min-width: 768px) {
