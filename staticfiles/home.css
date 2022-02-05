@@ -26,6 +26,12 @@ img{
     .cc{
         float: right;
     }   
+    .logocheck{
+        text-align: center;
+        margin-left: 10px;
+        width: 60px;
+        height: 20px;
+    }
 }
 @media (min-width: 768px) {
     .btn btn-dark{
