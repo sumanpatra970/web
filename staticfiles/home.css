@@ -34,7 +34,7 @@ img{
     margin-right:5px;
 }
 .ol{
-    font-size: large;
+    font-size: 40px;
 }
 @media only screen and (max-width: 600px) {
     img{
