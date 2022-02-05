@@ -103,16 +103,19 @@ def password(request):
     if request.method=="POST":
         fm=password_form(user=request.user,data=request.POST)
         if fm.is_valid():
-            print("okay valid")
+            msg="valid password"
             fm.save()
             return HttpResponseRedirect('login')
         else:
-            print("not valid")
+            msg="not valid password"
+            warn="Enter password combination of letter and number"
             fm=password_form(request.user)
-            return render(request,'password.html',{'fm':fm})
+            return render(request,'password.html',{'fm':fm,'msg':msg,'warn':warn})
     else:
+        msg="Enter password combination of letter and number"
+        warn=""
         fm=password_form(request.user)
-        return render(request,'password.html',{'fm':fm})
+        return render(request,'password.html',{'fm':fm,'msg':msg,'warn':warn})
 
 def editaccount(request):
     if request.user.is_authenticated:
