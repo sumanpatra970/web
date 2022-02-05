@@ -19,7 +19,7 @@ class user_change_form(UserChangeForm):
     password=None
     def __init__(self, *args, **kwargs): 
         super(user_change_form, self).__init__(*args, **kwargs)                       
-        self.fields['<field_to_disable>'].disabled = True
+        self.fields['username','first_name','last_name','email'].disabled = True
     class Meta:
         model=User
         fields=['username','email','first_name','last_name',]
