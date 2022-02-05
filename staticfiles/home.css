@@ -29,6 +29,7 @@ img{
     }
     .cc{
         float: right;
+        margin-left: 50px;
     }   
     .logocheck{
         text-align: center;
