@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UserChangeForm,PasswordChangeForm
-
+from .models import Feedback
 class account_creation_form(UserCreationForm):
     password1=forms.CharField(label="password",widget=forms.PasswordInput(attrs={'class':'form-control','id': 'my_field'}))
     password2=None
@@ -39,3 +39,11 @@ class password_form(PasswordChangeForm):
         
 class name_form(forms.Form):
     name=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+
+class feedbackform(forms.ModelForm):
+    class Meta:
+        model=Feedback
+        fields=['Name','Email','Query']
+        widgets={'Name':forms.TextInput(attrs={'class':'form-control'}),
+                'Email':forms.TextInput(attrs={'class':'form-control'}),
+                 'Query':forms.Textarea(attrs={'class':'form-control'})}

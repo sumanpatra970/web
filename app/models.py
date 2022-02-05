@@ -19,3 +19,7 @@ class group(models.Model):
         return self.name
 
 
+class Feedback(models.Model):
+    Name=models.CharField(max_length=30)
+    Email=models.CharField(max_length=50,default=" ")
+    Query=models.CharField(max_length=50)
