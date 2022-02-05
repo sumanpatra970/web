@@ -5,23 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{%static 'base.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" href="{% static 'COUNC.jpg' %}">
     <title>PRIVACY</title>
 </head>
 <body>
+    <br>
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-6">
+            <img src="{% static 'logo.jpg'%}" class="logocheck">
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        {% else %}
+        <div class="col-4">
+            <img src="{% static 'logo.jpg'%}" class="logocheck">
+        </div>
+        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck" id="buttonchange">Login</button></a></div>
+        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        {% endif %}
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 pox">
-                <h3>Personal data:</h4>
-                <h5>We do not share your personal informations like email and phone no with anyone.your data security is our first priority.</h5>
-                <h3>Payment related data:</h4>
-                <h5>We donot take your your card information and upi id during payment.When you pay via razorpay or paytm,it is completely encrypted.
-                so you donot need to worry about your card detail.it is safe.</h5>
+                <h5>Personal data:</h4>
+                <h4>We do not share your personal informations like email and phone no with anyone.your data security is our first priority.</h5>
                 <h4>We are always there to support you.if you feel like you need any clarity,you can contact us</h4>
             </div>
         </div>
     </div>
+    <br>
+    <footer>
+    <div class="row">
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/privacy"><p class="ol">Privacy</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/policy"><p class="ol">Policy</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/support"><p class="ol">Support</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/feedback"><p class="ol">Feedback</p></a></div>
+    </div>
+    </footer>
 </body>
 </html>
