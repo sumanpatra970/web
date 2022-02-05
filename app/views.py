@@ -164,3 +164,15 @@ def password_reset_request(request):
                     return redirect ("/password_reset/done/")
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="password_reset.html", context={"password_reset_form":password_reset_form})
+
+def privacy(request):
+    return render(request,'privacy.html')
+
+def policy(request):
+    return render(request,'policy.html')
+
+def support(request):
+    return render(request,'support.html')
+    
+def feedback(request):
+    return render(request,'feedback.html')

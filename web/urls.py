@@ -23,6 +23,10 @@ urlpatterns = [
     path('home/',views.home),
     path('chat/',views.chat),
     path('home/k/<str:group_name>/',views.index),
+    path('privacy',views.privacy),
+    path('policy',views.policy),
+    path('support',views.support),
+    path('feedback',views.feedback),
 ]
 
 
