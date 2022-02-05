@@ -17,11 +17,12 @@ class login_form(AuthenticationForm):
 
 class user_change_form(UserChangeForm):
     password=None
-    def __init__(self, *args, **kwargs): 
-        super(user_change_form, self).__init__(*args, **kwargs)                       
-        self.fields['username','first_name','last_name','email'].disabled = True
+    
     class Meta:
         model=User
+        def __init__(self, *args, **kwargs): 
+            super(user_change_form, self).__init__(*args, **kwargs)                       
+            self.fields['username','first_name','last_name','email'].disabled = True
         fields=['username','email','first_name','last_name',]
         widgets={'username':forms.TextInput(attrs={'class':'form-control'}),
                 'first_name':forms.TextInput(attrs={'class':'form-control'}),
