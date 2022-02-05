@@ -28,9 +28,11 @@ img{
         height:200px;
     }
     .cc{
-        float: right;
-        margin-left: 50px;
+        margin-left: 150px;
     }   
+    .btn-dark{
+        height:40px;
+    }
     .logocheck{
         text-align: center;
         margin-left: 25px;
