@@ -12,11 +12,15 @@
 <br><br><br><br>
 <div class="row">
     {% if user.is_authenticated %}
-    <div class="col-sm-4 pox"></div>
+    <div class="col-sm-3 pox">
+        <img src="{% static 'logo.jpg'%}" class="logocheck">
+    </div>
     <div class="col-sm-6"><a href="home"><button class="btn btn-warning" id="making">ENTER ROOM</button></a></div>
     <div class="col-3"></div>
     {% else %}
-    <div class="col-sm-3 pox"></div>
+    <div class="col-sm-3 pox">
+        <img src="{% static 'logo.jpg'%}" class="logocheck">
+    </div>
     <div class="col-sm-3 pox"><a href="signup"><button class="btn btn-warning" id="making">Signup</button></a></div>
     <div class="col-sm-3 pox" ><a href="login"><button class="btn btn-warning" id="making">Login</button></a></div>
     <div class="col-3"></div>
