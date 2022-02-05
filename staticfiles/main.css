@@ -18,6 +18,7 @@ body {
     width:660px;
     font-size: large;
     font-family: Georgia, serif;
+    margin-left:50px;
 }
 @media only screen and (max-width: 600px) {
     #making {
