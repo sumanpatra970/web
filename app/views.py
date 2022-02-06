@@ -68,7 +68,7 @@ def signup(request):
                 fail_silently=False)
                 send_mail(
                 'counsultandcounsel',
-                'Admin,you received a new feedback.Please check',
+                'Admin,a new user signed up.',
                 settings.EMAIL_HOST_USER,
                 ['sumanpatra68@gmail.com'],
                 fail_silently=False)
@@ -219,7 +219,7 @@ def feedback(request):
 def report(request):
     send_mail(
             'counsultandcounsel',
-            'Admin,you received a new feedback.Please check',
+            'Admin,you received a new request for non compliance.Please check',
             settings.EMAIL_HOST_USER,
             ['sumanpatra68@gmail.com',],
             fail_silently=False)
