@@ -61,15 +61,8 @@ def signup(request):
     else:
         if request.method=="POST":
             fm=account_creation_form(request.POST)
-            x=fm.cleaned_data['Email']
             if fm.is_valid():
                 fm.save()
-                send_mail(
-                'Group msti',
-                'Thank you for chhosing us.Now make our every moment mast. chat with other people and have fun..',
-                settings.EMAIL_HOST_USER,
-                [x],
-                fail_silently=False)
                 send_mail(
                 'counsultandcounsel',
                 'Admin,a new user signed up.',
