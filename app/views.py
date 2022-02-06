@@ -20,8 +20,9 @@ from django.conf import settings
 import socket
 
 def main(request):
-    host = socket.gethostname()   
+    host = socket.gethostname()  
     IPAddr = socket.gethostbyname(host)
+    print(host,IPAddr)
     return render(request,'main.html')
     
 def home(request):
