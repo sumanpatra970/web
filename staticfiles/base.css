@@ -59,7 +59,8 @@ img{
 .pol{
     resize:none;
     font-size: 2em;
-    font-family: "Times New Roman"
+    font-family: "Times New Roman";
+}
 .logocheck{
     text-align: center;
     margin-left: 40px;
