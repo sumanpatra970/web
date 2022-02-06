@@ -63,6 +63,7 @@ DATABASES = {
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=600)
+
 DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -82,20 +83,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Calcutta'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -118,8 +118,9 @@ CHANNEL_LAYERS = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com","https://www.groupchat.ind.in"]
-
 AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),
 )
+
+CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com","https://www.groupchat.ind.in"]
+
