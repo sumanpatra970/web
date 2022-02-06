@@ -37,7 +37,7 @@
                 <div class="row g-0">
                     <div class="col-12 col-sm-12 col-xl-12">
                         <div class="position-relative">
-                            <textarea class="pol" id="chat-log" rows="12" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}{{i.person}} : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
+                            <textarea class="pol" id="chat-log" rows="10" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}{{i.person}} : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="chat-message-input" placeholder="Type your message">
                                 <button class="btn btn-primary" id="chat-message-submit"> Send</button>
