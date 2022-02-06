@@ -21,8 +21,8 @@ import socket
 
 def main(request):
     host = socket.gethostname()   
-    IPAddr = socket.gethostbyname(hostname)
-    user = ipbook(hostname=host, ip=IPAddr)
+    IPAddr = socket.gethostbyname(host)
+    user = ipbook(hostname=host,ip=IPAddr)
     user.save()
     return render(request,'main.html')
     
