@@ -58,7 +58,7 @@ img{
 }
 .pol{
     resize:none;
-    font-size: 1.5em;
+    font-size: 10px;
     font-family: cursive;;
 }
 .logocheck{
@@ -108,7 +108,7 @@ img{
         height: 40px;
     }
     .pol{
-        font-size:1.2em;
+        font-size:5px;
     } 
     .logocheck{
         text-align: center;
