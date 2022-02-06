@@ -53,7 +53,7 @@
         <div class="row pox">
             <div class="col-sm-1"></div>
             <div class="col-sm-9">
-                <form action="customroom" method="POST">
+                <form method="POST">
                     {% csrf_token %}
                     <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
                     <input type="submit" class="btn btn-dark" id="ok" value="create room">
@@ -78,7 +78,7 @@
             const mmessageinputdom=document.getElementById('poo')
             const mmsg=messageinputdom.value
             console.log(mmsg)
-            location.href = "k/"+msg;
+            location.href = "https://www.groupchat.ind.in/home/"+"k/"+msg;
         };
     </script>
 </body>
