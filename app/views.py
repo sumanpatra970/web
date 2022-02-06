@@ -1,6 +1,6 @@
 from django.http.request import host_validation_re
 from django.shortcuts import render,redirect
-from .models import chat,group
+from .models import chat,group,ipbook
 from .Form import account_creation_form,login_form,password_form,user_change_form,name_form,feedbackform
 import http.client
 from django.contrib import auth
@@ -17,8 +17,13 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.conf import settings
+import socket
 
 def main(request):
+    host = socket.gethostname()   
+    IPAddr = socket.gethostbyname(hostname)
+    user = ipbook(hostname=host, ip=IPAddr)
+    user.save()
     return render(request,'main.html')
     
 def home(request):
