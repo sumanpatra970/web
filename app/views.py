@@ -217,5 +217,11 @@ def feedback(request):
             return render(request,'feedback.html',{'fm':fm})
 
 def report(request):
+    send_mail(
+            'counsultandcounsel',
+            'Admin,you received a new feedback.Please check',
+            settings.EMAIL_HOST_USER,
+            ['sumanpatra68@gmail.com',],
+            fail_silently=False)
     reportperson=request.user
     return render(request,'chat.html',{'report':reportperson})
