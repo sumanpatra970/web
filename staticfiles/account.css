@@ -3,28 +3,28 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-  }
-  img{
+    }
+img{
     border-radius: 10px;
-}
+    }
 .pox{
     color:white;
-}
+    }
 .xox{
     text-align: none;
-}
+    }
 #my-field{
     color:white;
-}
+    }
 .po{
     margin-left: 100px;
-}
+    }
 .ol{
     font-size: 25px;
-}
+    }
 .lox{
     color: white;
-}
+    }
 @media only screen and (max-width: 600px) {
     .xox{
         text-align: center;
