@@ -14,7 +14,7 @@ class groupadmin(admin.ModelAdmin):
 class feedback(admin.ModelAdmin):
     list_display = ['Name','Query']
 
-@admin.register(Feedback)  
+@admin.register(ipbook)  
 class ipdata(admin.ModelAdmin):
     list_display = ['hostname','ip']
 
