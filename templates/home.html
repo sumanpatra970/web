@@ -2,79 +2,84 @@
 {% load static%}
 <html>
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="{% static 'home.css'%}">
-<link rel="icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head class="pok">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Group chat personalchat room findlove find friends makenewfriend adult chat bestservice bestchatting website">
+    <meta name="description" content="Group Masti is a chatting platform where someone can talk with other people.Make every moment mast.You can also create personal chatroom and start personal chatting. Have fun.">
+    <meta name="author" content="Suman">
+    <title>ROOM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+    <link rel="icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
+</head>
 <body>
-<br>
-<div class="row">
-    {% if user.is_authenticated %}
-    <div class="col-6">
-        <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-    </div>
-    <div class="col-1"></div>
-    <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
-    {% else %}
-    <div class="col-4">
-        <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-    </div>
-    <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck lkp" id="buttonchange">Login</button></a></div>
-    <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
-    {% endif %}
-</div>
-<br>
-<div class="container-fluid lop">
+    <br>
     <div class="row">
-        <div class="col-sm-3 pox">
-            <div class="col-md-12"><img src="{% static 'pic1.jpg'%}" id="make"></div>
-            <div class="col-md-12 pox"><a href="k/indian/"><button class="btn btn-dark">North Indian chatroom</button></a></div>
+        {% if user.is_authenticated %}
+        <div class="col-6">
+            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
         </div>
-        <div class="col-sm-3 pox">
-            <div class="col-md-12"><img src="{% static 'pic5.jpg'%}" ></div>
-            <div class="col-md-12 pox"><a href="k/kolkata/"><button class="btn btn-dark">NorthEast chatroom</button></a></div>
+        <div class="col-1"></div>
+        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        {% else %}
+        <div class="col-4">
+            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
         </div>
-        <div class="col-sm-3 pox">
-            <div class="col-md-12"><img src="{% static 'pic6.jpg'%}"></div>
-            <div class="col-md-12 pox"><a href="k/bangalore/"><button class="btn btn-dark">South Indian chatroom</button></a></div>
+        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck lkp" id="buttonchange">Login</button></a></div>
+        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        {% endif %}
+    </div>
+    <br>
+    <div class="container-fluid lop">
+        <div class="row">
+            <div class="col-sm-3 pox">
+                <div class="col-md-12"><img src="{% static 'pic1.jpg'%}" id="make"></div>
+                <div class="col-md-12 pox"><a href="k/indian/"><button class="btn btn-dark">North Indian chatroom</button></a></div>
+            </div>
+            <div class="col-sm-3 pox">
+                <div class="col-md-12"><img src="{% static 'pic5.jpg'%}" ></div>
+                <div class="col-md-12 pox"><a href="k/kolkata/"><button class="btn btn-dark">NorthEast chatroom</button></a></div>
+            </div>
+            <div class="col-sm-3 pox">
+                <div class="col-md-12"><img src="{% static 'pic6.jpg'%}"></div>
+                <div class="col-md-12 pox"><a href="k/bangalore/"><button class="btn btn-dark">South Indian chatroom</button></a></div>
+            </div>
+            <div class="col-sm-3 pox">
+                <div class="col-md-12"><img src="{% static 'dating8.jpg'%}"></div>
+                <div class="col-md-12 pox"><a href="k/hyderbad/"><button class="btn btn-dark">Common chatroom</button></a></div>
+            </div>
         </div>
-        <div class="col-sm-3 pox">
-            <div class="col-md-12"><img src="{% static 'dating8.jpg'%}"></div>
-            <div class="col-md-12 pox"><a href="k/hyderbad/"><button class="btn btn-dark">Common chatroom</button></a></div>
+        <br><br>
+        <div class="row pox">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-9">
+                <form action="customroom" method="POST">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
+                    <input type="submit" class="btn btn-dark" id="ok" value="create room">
+                </form>
+            </div>
         </div>
     </div>
-    <br><br>
-    <div class="row pox">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-9">
-            <form action="customroom" method="POST">
-                {% csrf_token %}
-            <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
-            <input type="submit" class="btn btn-dark" id="ok" value="create room">
-            </form>
-        </div>
+    <br>
+    <footer>
+    <div class="row">
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/privacy"><p class="ol">Privacy</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/policy"><p class="ol">Policy</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/support"><p class="ol">Support</p></a></div>
+        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/feedback"><p class="ol">Feedback</p></a></div>
     </div>
-</div>
-<br>
-<footer>
-<div class="row">
-    <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/privacy"><p class="ol">Privacy</p></a></div>
-    <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/policy"><p class="ol">Policy</p></a></div>
-    <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/support"><p class="ol">Support</p></a></div>
-    <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/feedback"><p class="ol">Feedback</p></a></div>
-</div>
-</footer>
-<script>
-    document.getElementById("ok").onclick = function () {
-        const messageinputdom=document.getElementById('po')
-        const msg=messageinputdom.value
-        console.log(msg)
-        const mmessageinputdom=document.getElementById('poo')
-        const mmsg=messageinputdom.value
-        console.log(mmsg)
-        location.href = "k/"+msg;
-    };
-</script>
+    </footer>
+    <script>
+        document.getElementById("ok").onclick = function () {
+            const messageinputdom=document.getElementById('po')
+            const msg=messageinputdom.value
+            console.log(msg)
+            const mmessageinputdom=document.getElementById('poo')
+            const mmsg=messageinputdom.value
+            console.log(mmsg)
+            location.href = "k/"+msg;
+        };
+    </script>
 </body>
 </html>
