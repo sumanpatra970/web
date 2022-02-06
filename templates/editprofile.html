@@ -17,13 +17,13 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-6">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
+            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
         </div>
         <div class="col-1"></div>
         <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
         {% else %}
         <div class="col-4">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
+            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
         </div>
         <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck" id="buttonchange">Login</button></a></div>
         <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>

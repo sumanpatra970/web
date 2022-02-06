@@ -27,6 +27,4 @@ urlpatterns = [
     path('support',views.support),
     path('feedback',views.feedback),
 ]
-
-
 urlpatterns += staticfiles_urlpatterns()
