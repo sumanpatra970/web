@@ -215,3 +215,7 @@ def feedback(request):
     else:
             fm=feedbackform()
             return render(request,'feedback.html',{'fm':fm})
+
+def report(request):
+    reportperson=request.user
+    return render(request,'chat.html',{'report':reportperson})

@@ -37,7 +37,7 @@
                 <div class="row g-0">
                     <div class="col-12 col-sm-12 col-xl-12">
                         <div class="position-relative">
-                            <textarea class="pol" id="chat-log" rows="10" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}<a href="">{{i.person}}</a> : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
+                            <textarea class="pol" id="chat-log" rows="10" cols="140" wrap="hard" readonly style="max-width:100%">{%for i in chatmsg%}{{i.person}} : {{i.content}}.&#13;&#10;{% endfor %}</textarea>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="chat-message-input" placeholder="Type your message">
                                 <button class="btn btn-primary" id="chat-message-submit"> Send</button>
@@ -48,6 +48,13 @@
             </div>
         </div>
     </main>
+    <div class="row">
+        <div class="col-sm-3 pox"></div>
+        <div class="col-sm-3 pox">
+            <p> If you find any comment which is inappropiate we request you to report group. we will immediately take it down. No offense will not be tolerated.</p>
+            <a href="report">Report room</a>
+        </div>
+    </div>
     <br>
     {{userr|json_script:'name'}}
     {{group|json_script:'group_name'}}
