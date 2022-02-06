@@ -20,6 +20,6 @@ class Feedback(models.Model):
 
 class ipbook(models.Model):
     hostname=models.CharField(max_length=256)
-    ip=models.CharField(max_length=256)
+    ip=models.GenericIPAddressField()
     def __str__(self):
         return self.ip
