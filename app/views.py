@@ -1,7 +1,7 @@
 from django.http.request import host_validation_re
 from django.shortcuts import render,redirect
-from .models import chat,group,ipbook
-from .Form import account_creation_form,login_form,password_form,user_change_form,name_form,feedbackform
+from .models import chat,group
+from .Form import account_creation_form,login_form,password_form,user_change_form
 import http.client
 from django.contrib import auth
 from django.http import HttpResponseRedirect,HttpResponse
@@ -20,9 +20,6 @@ from django.conf import settings
 import socket
 
 def main(request):
-    host = socket.gethostname()  
-    IPAddr = socket.gethostbyname(host)
-    print(host,IPAddr)
     return render(request,'main.html')
     
 def home(request):

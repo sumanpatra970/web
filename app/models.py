@@ -1,4 +1,3 @@
-import ipaddress
 from django.db import models
 
 class chat(models.Model):
@@ -13,14 +12,4 @@ class group(models.Model):
     def __str__(self):
         return self.name
 
-class Feedback(models.Model):
-    Name=models.CharField(max_length=30)
-    Email=models.CharField(max_length=50,default=" ")
-    Query=models.CharField(max_length=50)
-    
 
-class ipbook(models.Model):
-    hostname=models.CharField(max_length=256)
-    ip=models.GenericIPAddressField()
-    def __str__(self):
-        return self.ip

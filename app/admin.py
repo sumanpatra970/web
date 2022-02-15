@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import chat,group,Feedback,ipbook
+from .models import chat,group
 
 @admin.register(chat)
 class ChatAdmin(admin.ModelAdmin):
@@ -10,13 +10,6 @@ class ChatAdmin(admin.ModelAdmin):
 class groupadmin(admin.ModelAdmin):
     list_display=['id','name']
 
-@admin.register(Feedback)  
-class feedback(admin.ModelAdmin):
-    list_display = ['Name','Query']
-
-@admin.register(ipbook)  
-class ipdata(admin.ModelAdmin):
-    list_display = ['hostname','ip']
 
 
 
