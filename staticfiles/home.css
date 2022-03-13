@@ -8,12 +8,9 @@ img{
     border-radius: 12px;
     width:100%;
 }
-.pox{
+.align{
     text-align:center;
     color:white;
-}
-.tox{
-    text-align:center;
 }
 .logocheck{
     text-align: center;
@@ -21,37 +18,34 @@ img{
     width: 150px;
     height: 50px;
 }
-.cc{
+.btn-first{
     margin-left: 200px;
     width: 150px;
     height:50px;
 }
-.ck{
+.btn-second{
     margin-left: 100px;
     width:150px;
     height: 50px;
 }
-.pk{
-    margin-right:5px;
+.btn-third{
+    margin-right: 0px;
 }
-.ol{
+.text-size{
     font-size: 25px;
 }
-.lop{
+.home-body{
     margin-top: 100px;
-}
-.lkp{
-    margin-right: 0px;
 }
 @media only screen and (max-width: 600px) {
     img{
         border-radius: 10px;
         height:200px;
     }
-    .lop{
+    .home-body{
         margin-top: 0px;
     }
-    .cc{
+    .btn-first{
         margin-left: 10px;
         width:100px;
         height:40px;
@@ -62,20 +56,18 @@ img{
         width: 100px;
         height: 40px;
     }
-    .ck{
+    .btn-second{
         margin-left: 0px;
         width:80px;
         height: 40px;
+        margin-right: 0px;
     }
-    .pk{
-        margin-right:5px;
-    }
-    .ol{
+    .text-size{
         font-size:20px;
     }
 }
 @media (min-width: 768px) {
-    .btn btn-dark{
+    .btn .btn-dark{
         margin-right:20px;
     }
 }

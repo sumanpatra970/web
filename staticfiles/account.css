@@ -7,10 +7,11 @@ body {
 img{
     border-radius: 10px;
     }
-.pox{
+.align{
+    text-align: center;
     color:white;
     }
-.xox{
+.textcls{
     text-align: none;
     }
 #my-field{
@@ -24,9 +25,9 @@ img{
     }
 .lox{
     color: white;
-    }
+}
 @media only screen and (max-width: 600px) {
-    .xox{
+    .textcls{
         text-align: center;
     }
     .ol{

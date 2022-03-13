@@ -46,17 +46,11 @@ img{
 .border-top {
     border-top: 1px solid #dee2e6!important;
 }
-.pox{
+.align{
     text-align:center;
     color:white;
 }
-.ko{
-  background:#FFC300;
-}
-.lo{
-    background:#FFC300;
-}
-.pol{
+.textstyle{
     resize:none;
     font-size: 1.6em;
     font-family: "Times New Roman";
@@ -67,47 +61,32 @@ img{
     width: 150px;
     height: 50px;
 }
-.colo{
-    color: green;
-}
-.cc{
+.btn-first{
     margin-left: 200px;
     width: 150px;
     height:50px;
 }
-.ck{
+.btn-second{
     margin-left: 100px;
     width:150px;
     height: 50px;
-}
-.kk{
-    text-align: center;
-}
-.ol{
-    font-size: 25px;
-}
-.poll{
-    font-size:20px;
-}
-.ka{
-    font-size:20px;
 }
 @media only screen and (max-width: 600px) {
     img{
         border-radius: 10px;
         height:200px;
     }
-    .cc{
+    .btn-first{
         margin-left: 10px;
         width:100px;
         height:40px;
     }   
-    .ck{
+    .btn-second{
         margin-left: 0px;
         width:80px;
         height: 40px;
     }
-    .pol{
+    .textstyle{
         font-size:1.3em;
     } 
     .logocheck{
@@ -116,7 +95,4 @@ img{
         width: 100px;
         height: 40px;
     } 
-    .ol{
-        font-size:medium;
-    }
 }

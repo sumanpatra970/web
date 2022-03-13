@@ -7,53 +7,49 @@
     <meta name="keywords" content="Group chat personalchat room findlove find friends makenewfriend adult chat bestservice bestchatting website">
     <meta name="description" content="Group Masti is a chatting platform where someone can talk with other people.Make every moment mast.You can also create personal chatroom and start personal chatting. Have fun.">
     <meta name="author" content="Suman">
-    <title>ROOM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'home.css'%}">
     <link rel="icon" type="image/x-icon" href="{%static 'favicon.ico'%}">
+    <title>ROOM</title>
 </head>
 <body>
     <br>
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-6">
-            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-        </div>
+        <div class="col-6"><a href=""><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
         <div class="col-1"></div>
-        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        <div class="col-2"><a href="account_check"><button class="btn btn-dark btn-first" role="button">{{user}}</button></a></div>
         {% else %}
-        <div class="col-4">
-            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-        </div>
-        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck lkp" id="buttonchange">Login</button></a></div>
-        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        <div class="col-4"><a href="/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-4 align"><a href="login"><button class="btn btn-dark btn-second btn-third" id="buttonchange">Login</button></a></div>
+        <div class="col-4"><a href="signup"><button class="btn btn-dark btn-second" id="buttonchange">Signup</button></a></div>
         {% endif %}
     </div>
     <br>
-    <div class="container-fluid lop">
+    <div class="container-fluid home-body">
         <div class="row">
-            <div class="col-sm-3 pox">
-                <div class="col-md-12"><img src="{% static 'pic1.jpg'%}" id="make"></div>
-                <div class="col-md-12 pox"><a href="k/indian/"><button class="btn btn-dark">North Indian chatroom</button></a></div>
+            <div class="col-sm-3 align">
+                <div class="col-md-12"><img src="{% static 'pic1.jpg'%}" ></div>
+                <div class="col-md-12 align"><a href="k/indian/"><button class="btn btn-dark">North Indian chatroom</button></a></div>
             </div>
-            <div class="col-sm-3 pox">
+            <div class="col-sm-3 align">
                 <div class="col-md-12"><img src="{% static 'pic5.jpg'%}" ></div>
-                <div class="col-md-12 pox"><a href="k/kolkata/"><button class="btn btn-dark">NorthEast chatroom</button></a></div>
+                <div class="col-md-12 align"><a href="k/kolkata/"><button class="btn btn-dark">NorthEast chatroom</button></a></div>
             </div>
-            <div class="col-sm-3 pox">
+            <div class="col-sm-3 align">
                 <div class="col-md-12"><img src="{% static 'pic6.jpg'%}"></div>
-                <div class="col-md-12 pox"><a href="k/bangalore/"><button class="btn btn-dark">South Indian chatroom</button></a></div>
+                <div class="col-md-12 align"><a href="k/bangalore/"><button class="btn btn-dark">South Indian chatroom</button></a></div>
             </div>
-            <div class="col-sm-3 pox">
+            <div class="col-sm-3 align">
                 <div class="col-md-12"><img src="{% static 'dating8.jpg'%}"></div>
-                <div class="col-md-12 pox"><a href="k/hyderbad/"><button class="btn btn-dark">Common chatroom</button></a></div>
+                <div class="col-md-12 align"><a href="k/hyderbad/"><button class="btn btn-dark">Common chatroom</button></a></div>
             </div>
         </div>
         <br><br>
-        <div class="row pox">
+        <div class="row align">
             <div class="col-sm-1"></div>
             <div class="col-sm-9">
-                <input type="text" placeholder="Create custom room of your choice" id="poo" name="custom" class="form-control pox"><br>
+                <input type="text" placeholder="Create custom room of your choice" id="imp" name="custom" class="form-control align"><br>
                 <input type="submit" class="btn btn-dark" id="ok" value="create room">
             </div>
         </div>
@@ -61,17 +57,17 @@
     <br>
     <footer>
     <div class="row">
-        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/privacy"><p class="ol">Privacy</p></a></div>
-        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/policy"><p class="ol">Policy</p></a></div>
-        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/support"><p class="ol">Support</p></a></div>
-        <div class="col-sm-3 pox"><a href="https://www.groupchat.ind.in/feedback"><p class="ol">Feedback</p></a></div>
+        <div class="col-sm-3 align"><a href="privacy"><p class="textsize">Privacy</p></a></div>
+        <div class="col-sm-3 align"><a href="policy"><p class="textsize">Policy</p></a></div>
+        <div class="col-sm-3 align"><a href="support"><p class="textsize">Support</p></a></div>
+        <div class="col-sm-3 align"><a href="feedback"><p class="textsize">Feedback</p></a></div>
     </div>
     </footer>
     <script>
         document.getElementById("ok").onclick = function () {
-            const mmsg=document.getElementById('poo').value
+            const mmsg=document.getElementById('imp').value
             console.log(mmsg)
-            location.href = "https://www.groupchat.ind.in/home/"+"k/"+mmsg;
+            location.href = "home/"+"k/"+mmsg;
         };
     </script>
 </body>

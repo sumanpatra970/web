@@ -7,16 +7,16 @@ body {
 img{
     border-radius: 12px;
 }
-.pox{
+.align{
     text-align:center;
 }
-#making{
+#button-first{
     height:50px;
     width:200px;
     font-size: large;
     font-family: Georgia, serif;
 }
-#looking{
+#button-second{
     height:50px;
     width:660px;
     font-size: large;
@@ -30,13 +30,13 @@ img{
     height: 80px;
 }
 @media only screen and (max-width: 600px) {
-    #making {
+    #button-first{
       height:40px;
       width:200px;
       font-size: 18px;
       margin-top:10px;
     }
-    #looking{
+    #button-second{
         height:40px;
         width:250px;
         font-size:18px;
