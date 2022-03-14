@@ -10,6 +10,9 @@ img{
     button{
         font-size:18px;
     }
+#buttonchange{
+    font-size: larger;
+}
 .align{
     text-align: center;
     color:white;
