@@ -122,5 +122,5 @@ AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),
 )
 
-CSRF_TRUSTED_ORIGINS = ["https://chat97.herokuapp.com","https://www.groupchat.ind.in"]
+CSRF_TRUSTED_ORIGINS = ["https://groupmasti.herokuapp.com","https://www.groupchat.ind.in"]
 
