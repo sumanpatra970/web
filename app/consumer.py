@@ -1,16 +1,12 @@
 from channels.consumer import AsyncConsumer, SyncConsumer
-
 from channels.exceptions import StopConsumer
-
 from asgiref.sync import async_to_sync
-
 import json
-
 from .models import group,chat
 
 class MySync(SyncConsumer):
     def websocket_connect(self,event):
-        self.gpn=self.scope['url_route']['kwargs']['grpname']
+        self.gpn = self.scope['url_route']['kwargs']['grpname']
         print("websocket connected for group ",self.gpn,self.scope["user"])
         print("channel layer ",self.channel_layer)
         print("channel name ",self.channel_name)
@@ -22,7 +18,7 @@ class MySync(SyncConsumer):
         print("event is ",event)
         ddata=json.loads(event['text'])
         print("final data...",ddata)
-        groupp=group.objects.get(name=self.gpn)
+        groupp = group.objects.get(name=self.gpn)
         print("chat is going to ave for group",groupp)
         chatt = chat(content=ddata['msg'],group=groupp,person=self.scope['user'])
         chatt.save()
@@ -39,10 +35,9 @@ class MySync(SyncConsumer):
         print("channel layer",self.channel_layer,self.channel_name)
         raise StopConsumer()
 
-
 class MyAsync(AsyncConsumer):
     async def websocket_connect(self,event):
-        self.gpn=self.scope['url_route']['kwargs']['grpname']
+        self.gpn = self.scope['url_route']['kwargs']['grpname']
         print("websocket connected",self.gpn)
         print("channel layer",self.channel_layer,self.channel_name)
         async_to_sync(self.channel_layer.group_add)(self.gpn,self.channel_name)

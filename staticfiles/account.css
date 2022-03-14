@@ -7,9 +7,6 @@ body {
 img{
     border-radius: 10px;
     }
-    button{
-        font-size:18px;
-    }
 #buttonchange{
     font-size: 18px;
 }
@@ -22,12 +19,6 @@ img{
     }
 #my-field{
     color:white;
-    }
-.po{
-    margin-left: 100px;
-    }
-.ol{
-    font-size: 25px;
     }
 .textstyle{
     color: white;
@@ -51,9 +42,6 @@ img{
     height: 50px;
 }
 @media only screen and (max-width: 600px) {
-    button{
-        font-size:14px;
-    }
     #buttonchange{
         font-size: 14px;
     }
@@ -69,9 +57,6 @@ img{
     }
     .textcls{
         text-align: center;
-    }
-    .ol{
-        font-size: medium;
     }
     .logocheck{
         text-align: center;

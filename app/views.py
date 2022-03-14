@@ -1,11 +1,13 @@
 from django.http.request import host_validation_re
 from django.shortcuts import render,redirect
 from .models import chat,group
-from .Form import account_creation_form,login_form,password_form,user_change_form,feedbackform
+import json
+from .Form import account_creation_form,login_form,password_form
+from .Form import user_change_form,feedbackform
 import http.client
+import socket
 from django.contrib import auth
 from django.http import HttpResponseRedirect,HttpResponse
-import json
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail, BadHeaderError
@@ -17,7 +19,6 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.conf import settings
-import socket
 
 def main(request):
     return render(request,'main.html')
@@ -28,8 +29,8 @@ def home(request):
 def index(request,group_name):
     print(request.user)
     print(group_name)
-    chat_list=[]
-    grp=group.objects.filter(name=group_name).first()
+    chat_list = []
+    grp = group.objects.filter(name=group_name).first()
     print("group name received from input",grp)
     if grp:
         print("in if block ")
@@ -38,16 +39,16 @@ def index(request,group_name):
     else:
         print("in else block ")
         group.objects.create(name=group_name)
-    strr=str(request.user)
+    strr = str(request.user)
     userk = bytes(strr, 'utf-8')
     print(type(userk))
-    userkk=userk.decode(encoding="utf-8")
+    userkk = userk.decode(encoding = "utf-8")
     print(type(userkk))
     return render(request,'index.html',{'chatmsg':chat_list,'group':group_name,'userr':userkk})
 
 def customroom(request):
-    if request.method=="POST":
-        grp=request.POST['custom']
+    if request.method == "POST":
+        grp = request.POST['custom']
         print(grp)
         print(type(grp))
         return HttpResponseRedirect('http://127.0.0.1:8000/home/k/'+grp)
@@ -57,7 +58,7 @@ def signup(request):
         return HttpResponseRedirect('account')
     else:
         if request.method=="POST":
-            fm=account_creation_form(request.POST)
+            fm = account_creation_form(request.POST)
             if fm.is_valid():
                 fm.save()
                 send_mail(
@@ -69,31 +70,31 @@ def signup(request):
                 return render(request,'account.html')
             else:
                 print("problem here")
-                data= fm.cleaned_data.get("form_field")
+                data = fm.cleaned_data.get("form_field")
                 print(data)
                 return render(request,'ok.html',{'fm':fm})
         else:
-            fm=account_creation_form()
+            fm = account_creation_form()
             return render(request,'signup.html',{'fm':fm})
 
 def login(request):
-    if request.method=='POST':
-        user_fm=login_form(data=request.POST)
+    if request.method == 'POST':
+        user_fm = login_form(data=request.POST)
         if user_fm.is_valid():
-            uname=user_fm.cleaned_data['username']
-            upass=user_fm.cleaned_data['password']
-            user=auth.forms.authenticate(username=uname,password=upass)
+            uname = user_fm.cleaned_data['username']
+            upass = user_fm.cleaned_data['password']
+            user = auth.forms.authenticate(username=uname,password=upass)
             if user is not None:
                 auth.login(request,user)
                 return HttpResponseRedirect('account')
             else:
-                user_fm=login_form()
+                user_fm = login_form()
                 return render(request,'ok.html',{'fm':user_fm})
         else:
-                user_fm=login_form()
-                return render(request,'ok.html',{'fm':user_fm})
+            user_fm=login_form()
+            return render(request,'ok.html',{'fm':user_fm})
     else:
-        user_fm=login_form()
+        user_fm = login_form()
         return render(request,'login.html',{'fm':user_fm})
 
 def account(request):
@@ -101,41 +102,41 @@ def account(request):
 
 def account_check(request):
     if request.user.is_authenticated:
-        user_acc=user_change_form(instance=request.user)
+        user_acc = user_change_form(instance=request.user)
         return render(request,'account_detail.html',{'data':user_acc})
     else:
         return HttpResponseRedirect('login')
 
 def password(request):
-    if request.method=="POST":
+    if request.method == "POST":
         fm=password_form(user=request.user,data=request.POST)
         if fm.is_valid():
-            msg="valid password"
+            msg = "valid password"
             fm.save()
             return HttpResponseRedirect('login')
         else:
-            msg="not valid password"
-            warn="Enter password combination of letter and number"
-            fm=password_form(request.user)
+            msg = "not valid password"
+            warn = "Enter password combination of letter and number"
+            fm = password_form(request.user)
             return render(request,'password.html',{'fm':fm,'msg':msg,'warn':warn})
     else:
-        msg="Enter password combination of letter and number"
-        warn=""
-        fm=password_form(request.user)
+        msg = "Enter password combination of letter and number"
+        warn = ""
+        fm = password_form(request.user)
         return render(request,'password.html',{'fm':fm,'msg':msg,'warn':warn})
 
 def editaccount(request):
     if request.user.is_authenticated:
-        if request.method=="POST":
-            user=user_change_form(request.POST,instance=request.user)
+        if request.method == "POST":
+            user = user_change_form(request.POST,instance=request.user)
             if user.is_valid():
                 user.save()
                 return HttpResponseRedirect('login')
             else:
-                user_acc=user_change_form(instance=request.user)
+                user_acc = user_change_form(instance=request.user)
                 return render(request,'editprofile.html',{'data':user_acc})
         else:
-            user_acc=user_change_form(instance=request.user)
+            user_acc = user_change_form(instance=request.user)
             return render(request,'editprofile.html',{'data':user_acc})
     else:
         return HttpResponseRedirect('login')
@@ -143,7 +144,6 @@ def editaccount(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('login')
-
 
 def password_reset_request(request):
     if request.method == "POST":
@@ -165,7 +165,7 @@ def password_reset_request(request):
 					'protocol': 'http',
 					}
                     email = render_to_string(email_template_name, c)
-                    vemail="https://www.groupchat.ind.in/reset/"+c['uid']+"/"+c['token']
+                    vemail="https://groupmasti.herokuapp.com/reset/"+c['uid']+"/"+c['token']
                     print(vemail)
                     try:
                         send_mail(subject, email, 'admin@example.com' , [user.email], fail_silently=False)
@@ -185,37 +185,19 @@ def support(request):
     return render(request,'support.html')
     
 def feedback(request):
-    if request.method=="POST":
-        fm=feedbackform(request.POST,request.FILES)
+    if request.method == "POST":
+        fm = feedbackform(request.POST,request.FILES)
         if fm.is_valid():
-            x=fm.cleaned_data['Email']
+            x = fm.cleaned_data['Email']
             fm.save()
-            send_mail(
-            'counsultandcounsel',
-            'Thank you for your feedback.We will check and reach out soon.Have a bright future ahead.',
-            settings.EMAIL_HOST_USER,
-            [x],
-            fail_silently=False)
-            send_mail(
-            'counsultandcounsel',
-            'Admin,you received a new feedback.Please check',
-            settings.EMAIL_HOST_USER,
-            ['sumanpatra68@gmail.com',],
-            fail_silently=False)
             return render(request,'thank.html')
         else:
             fm=feedbackform()
             return render(request,'feedback.html',{'fm':fm})
     else:
-            fm=feedbackform()
-            return render(request,'feedback.html',{'fm':fm})
+        fm=feedbackform()
+        return render(request,'feedback.html',{'fm':fm})
 
 def report(request):
-    send_mail(
-            'counsultandcounsel',
-            'Admin,you received a new request for non compliance.Please check',
-            settings.EMAIL_HOST_USER,
-            ['sumanpatra68@gmail.com',],
-            fail_silently=False)
-    reportperson=request.user
+    reportperson = request.user
     return render(request,'chat.html',{'report':reportperson})
