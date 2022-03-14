@@ -16,28 +16,24 @@
     <br>
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-6">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
-        </div>
-        <div class="col-1"></div>
-        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        <div class="col-6"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-2"></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
         {% else %}
-        <div class="col-4">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
-        </div>
-        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck" id="buttonchange">Login</button></a></div>
-        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/signup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
         {% endif %}
     </div>
     <br><br><br><br>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4 pox"></div>
-            <div class="col-sm-4 pox">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 align">
             <h3 class="pox">SOMETHING WENT WRONG</h3>
             <h3 class="pox">INVALID PASSWORD AND USERNAME</h3>
-            <a href="https://www.groupchat.ind.in/login"><h5 class="pox">CLICK HERE TO LOGIN</h5></a>
-            <a href="https://www.groupchat.ind.in"><h5 class="pox">CLICK HERE TO GO HOMEPAGE</h5></a>
+            <a href="https://groupmasti.herokuapp.com//login"><h5 class="pox">CLICK HERE TO LOGIN</h5></a>
+            <a href="https://groupmasti.herokuapp.com/"><h5 class="align">CLICK HERE TO GO HOMEPAGE</h5></a>
             </div>
         </div>
     </div>
