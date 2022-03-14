@@ -11,5 +11,12 @@ class group(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Feedback(models.Model):
+    Name = models.CharField(max_length=30,default="NA")
+    Email = models.CharField(max_length=50,default="NA")
+    Query = models.CharField(max_length=500,default="NA")
+    made_on = models.DateTimeField(auto_now_add=True)
 
 
