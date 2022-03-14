@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UserChangeForm
-from .Form import PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UserChangeForm,PasswordChangeForm
 from .models import Feedback
 
 class account_creation_form(UserCreationForm):
