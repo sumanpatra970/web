@@ -26,7 +26,17 @@ img{
 .lox{
     color: white;
 }
+.btn-first{
+    margin-left: 200px;
+    width: 150px;
+    height:50px;
+}
 @media only screen and (max-width: 600px) {
+    .btn-first{
+        margin-left: 10px;
+        width:100px;
+        height:40px;
+    }   
     .textcls{
         text-align: center;
     }
