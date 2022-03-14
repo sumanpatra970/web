@@ -31,6 +31,11 @@ img{
     width: 150px;
     height:50px;
 }
+.btn-second{
+    margin-left: 100px;
+    width:150px;
+    height: 50px;
+}
 .logocheck{
     text-align: center;
     margin-left: 40px;
@@ -43,6 +48,11 @@ img{
         width:100px;
         height:40px;
     }   
+    .btn-second{
+        margin-left: 0px;
+        width:80px;
+        height: 40px;
+    }
     .textcls{
         text-align: center;
     }
