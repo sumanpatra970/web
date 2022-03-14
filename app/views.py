@@ -1,7 +1,7 @@
 from django.http.request import host_validation_re
 from django.shortcuts import render,redirect
 from .models import chat,group
-from .Form import account_creation_form,login_form,password_form,user_change_form
+from .Form import account_creation_form,login_form,password_form,user_change_form,feedbackform
 import http.client
 from django.contrib import auth
 from django.http import HttpResponseRedirect,HttpResponse

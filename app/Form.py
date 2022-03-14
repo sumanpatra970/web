@@ -36,3 +36,8 @@ class password_form(PasswordChangeForm):
     new_password2=forms.CharField(label="Confirm Newpassword",widget=forms.PasswordInput(attrs={'class':'form-control'}))
     class Meta:
         model=User
+
+class feedbackform(forms.Form):
+    name=forms.CharField()
+    email=forms.EmailField()
+    query=forms.Textarea()
