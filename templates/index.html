@@ -64,7 +64,7 @@
           }
         const grpname=JSON.parse(document.getElementById('group_name').textContent)
         const username=JSON.parse(document.getElementById('name').textContent)
-        var ws= new WebSocket('wss://www.groupmasti.herokuapp.com/wa/sc/'+grpname)
+        var ws= new WebSocket('ws://www.groupmasti.herokuapp.com/wa/sc/'+grpname)
         console.log(grpname)
         ws.onopen = function(){
             console.log('WebSocket connection open....')
