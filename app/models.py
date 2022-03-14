@@ -14,9 +14,9 @@ class group(models.Model):
     
 
 class Feedback(models.Model):
-    Name = models.CharField(max_length=30,default="NA")
-    Email = models.CharField(max_length=50,default="NA")
-    Query = models.CharField(max_length=500,default="NA")
+    Name = models.CharField(max_length=30,default="")
+    Email = models.CharField(max_length=50,default="")
+    Query = models.CharField(max_length=500,default="")
     made_on = models.DateTimeField(auto_now_add=True)
 
 
