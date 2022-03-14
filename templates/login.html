@@ -24,7 +24,7 @@
         <div class="col-2"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
         {% else %}
         <div class="col-4">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
+            <a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
         </div>
         <div class="col-4 pox"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
         <div class="col-4"><a href="https://groupmasti.herokuapp.com/signup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
@@ -39,12 +39,12 @@
                 <form class="form-group" action="login" method="POST">
                     {% csrf_token %}
                     {%for i in fm%}
-                    <h5 id="my-field">{{ i.label }}</h5>
+                    <h5 class="textstyle">{{ i.label }}</h5>
                     <h5>{{ i }}{{i.errors|striptags}}</h5>
                     {%endfor%}
                     <button type="submit" class="btn btn-dark">SUBMIT</button>
                 </form>
-                <h5 class="textstyle">New to site?</h5><a href="signup"><h5 class="textstyle">Creat your account</h5></a>
+                <h5 class="textstyle">New to site?</h5><a href="signup">Creat your account</a>
                 <h5 class="textstyle"><a href="password_reset">forgot password</a></h5>
             </div>
         </div>
