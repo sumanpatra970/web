@@ -14,24 +14,20 @@
     <br>
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-6">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
-        </div>
-        <div class="col-1"></div>
-        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark cc" role="button">{{user}}</button></a></div>
+        <div class="col-6"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-2"></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
         {% else %}
-        <div class="col-4">
-            <img src="{% static 'logo.jpg'%}" class="logocheck">
-        </div>
-        <div class="col-4 pox"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark ck" id="buttonchange">Login</button></a></div>
-        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark ck" id="buttonchange">Signup</button></a></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/signup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
         {% endif %}
     </div>
     <br><br><br><br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4"></div>
-            <div class="col-sm-4 pox">
+            <div class="col-sm-4 align">
                 <h3>Thank you for your valuable feedback, We will check your review and we will take neccessary information</h4>
             </div>
         </div>

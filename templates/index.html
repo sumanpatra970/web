@@ -16,17 +16,13 @@
     <br>
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-6">
-            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-        </div>
-        <div class="col-1"></div>
-        <div class="col-2"><a href="https://www.groupchat.ind.in/account_check"><button class="btn btn-dark btn-first" role="button">{{user}}</button></a></div>
+        <div class="col-6"><a href="https://groupmasti.herokuapp.com"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-2"></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
         {% else %}
-        <div class="col-4">
-            <a href="https://www.groupchat.ind.in"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-        </div>
-        <div class="col-4 align"><a href="https://www.groupchat.ind.in/login"><button class="btn btn-dark btn-second" id="buttonchange">Login</button></a></div>
-        <div class="col-4"><a href="https://www.groupchat.ind.in/signup"><button class="btn btn-dark btn-second" id="buttonchange">Signup</button></a></div>
+        <div class="col-4"><a href="https://groupmasti.herokuapp.com"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
+        <div class="col-4 align"><a href="https://groupmasti.herokuapp.comsignup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
         {% endif %}
     </div>
     <main class="content">
@@ -52,7 +48,7 @@
         <div class="col-sm-3 align"></div>
         <div class="col-sm-6 align">
             <h4> If you find any comment which is inappropiate we request you to report group. we will immediately take it down.</h4>
-            <a href="https://www.groupchat.ind.in/report"><button class="btn btn-warning">Report room</button></a>
+            <a href="https://groupmasti.herokuapp.com/report"><button class="btn btn-warning">Report room</button></a>
         </div>
     </div>
     <br>
