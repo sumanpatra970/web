@@ -8,11 +8,25 @@
 <link rel="stylesheet" href="{%static 'base.css'%}">
 </head>
 <body>
-    <br><br>
-    <br><br>
+    <br>
+    <div class="row">
+      {% if user.is_authenticated %}
+      <div class="col-6">
+          <a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-2"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
+      {% else %}
+      <div class="col-4">
+          <img src="{% static 'logo.jpg'%}" class="logocheck">
+      </div>
+      <div class="col-4 pox"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
+      <div class="col-4"><a href="https://groupmasti.herokuapp.com/signup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
+      {% endif %}
+    </div>
     <div class="row">
       <div class="col-sm-4"></div>
-      <div class="col-sm-4 pox">
+      <div class="col-sm-4 align">
         <h4>Hey {{report}}, as per your request,we are reviewing the content. If it is inappropiate then we will take neccessary action</h4>
       <hr>
       <a href="https://www.groupchat.ind.in"><button class="btn btn-primary">HOME PAGE</button>
