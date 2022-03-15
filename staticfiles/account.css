@@ -24,16 +24,12 @@ img{
     color: white;
 }
 .btn-first{
-    margin-left: 200px;
     width: 120px;
     height:40px;
-    margin-right:0px;
 }
 .btn-second{
-    margin-left: 0px;
     width:120px;
     height: 40px;
-    margin-right: 0px;
 }
 .logocheck{
     text-align: center;
