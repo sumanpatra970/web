@@ -1,26 +1,7 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 {% load static%}
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Group chat personalchat room findlove find friends makenewfriend adult chat bestservice bestchatting website">
-    <meta name="description" content="Group Masti is a chatting platform where someone can talk with other people.Make every moment mast.You can also create personal chatroom and start personal chatting. Have fun.">
-    <meta name="author" content="Suman">
-    <meta name="google-site-verification" content="o9PXACBj7h0iQ8h0BRkCfwqIV7u9fw9qrhf0-pOm8UQ" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'main.css'%}">
-    <title>GROUP MASTI</title>
-    <link rel="icon" href="{% static 'logo.jpg' %}">
-</head>
-<body><br>
-    <div class="row">
-        <div class="col-sm-6 align">
-            <a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a>
-        </div>
-        <div class="col-sm-6"></div>
-    </div>
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
         {% if user.is_authenticated %}
         <div class="row">
         <div class="col-sm-3 align"></div>
@@ -42,8 +23,7 @@
             <div class="col-sm-3 align"><a href="account_check"><button class="btn btn-warning" id="button-first">Enter as model</button></a></div>
             <div class="col-3"></div>
         </div>
+        <br><br><br><br>
         {%endif%}
     </div>
-    <br>
-</body>
-</html>
+{%endblock%}

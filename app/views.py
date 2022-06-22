@@ -61,12 +61,6 @@ def signup(request):
             fm = account_creation_form(request.POST)
             if fm.is_valid():
                 fm.save()
-                send_mail(
-                'counsultandcounsel',
-                'Admin,a new user signed up.',
-                settings.EMAIL_HOST_USER,
-                ['sumanpatra68@gmail.com'],
-                fail_silently=False)
                 return render(request,'account.html')
             else:
                 print("problem here")

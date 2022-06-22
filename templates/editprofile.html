@@ -1,31 +1,6 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 {% load static%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Group chat personalchat room findlove find friends makenewfriend adult chat bestservice bestchatting website">
-    <meta name="description" content="Group Masti is a chatting platform where someone can talk with other people.Make every moment mast.You can also create personal chatroom and start personal chatting. Have fun.">
-    <meta name="author" content="Suman">
-    <link rel="stylesheet" href="{% static 'account.css'%}">
-    <link rel="icon" href="{% static 'logo.jpg' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>EDITPROFILE</title>
-</head>
-<body>
-    <br>
-    <div class="row">
-        {% if user.is_authenticated %}
-        <div class="col-6"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
-        <div class="col-2"></div>
-        <div class="col-4"><a href="https://groupmasti.herokuapp.com/account_check"><button class="btn btn-dark btn-second" role="button">{{user}}</button></a></div>
-        {% else %}
-        <div class="col-4"><a href="https://groupmasti.herokuapp.com/"><img src="{% static 'logo.jpg'%}" class="logocheck"></a></div>
-        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/login"><button class="btn btn-dark btn-first" id="buttonchange">Login</button></a></div>
-        <div class="col-4 align"><a href="https://groupmasti.herokuapp.com/signup"><button class="btn btn-dark btn-first" id="buttonchange">Signup</button></a></div>
-        {% endif %}
-    </div>
-    <br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3"></div>
@@ -41,6 +16,4 @@
             </div>
         </div>
     </div>
-    <br>
-</body>
-</html>
+    {%endblock%}
